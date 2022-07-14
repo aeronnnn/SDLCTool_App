@@ -16,7 +16,7 @@
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="../plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
   <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="src/css/kanban.css" />
+  <!-- <link rel="stylesheet" href="src/css/kanban.css" /> -->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -139,69 +139,69 @@
       <div class="container-fluid h-100">
         <div class="card">
           <div class="card-header">
-            <h3 class="card-title" >
+            <h3 class="card-title">
               Create Event
             </h3>
           </div>
           <!-- /.card-header -->
           <div class="card-body">
             <ul class="task-list" data-lists></ul>
+            
           </div>
           <!-- /.card-body -->
           <div class="card-footer clearfix">
             <form action="" data-new-list-form>
+              <!-- /btn-group -->
               <div class="input-group">
-                <input type="text" class="new list" data-new-list-input placeholder="Event Title" aria-label="new list name">
-                
-                <div class="input-group-append">
-                  <button class="btn btn-primary" class="btn create" aria-label="create new list">Add</button>
-                </div>
+              <input type="text" class="new list" data-new-task-input placeholder="Event Title" aria-label="new list name">
+
+              <div class="input-group-append">
+                <button class="btn btn-primary" class="btn create" aria-label="create new list">Add</button>
               </div>
               <!-- /btn-group -->
             </form>
+            </div>
           </div>
-          <!-- /.card-footer -->
         </div>
+        <!-- /.card -->
 
-        <div class="card card-primary" data-list-display-container>
+        <div class="card card-row card">
           <div class="card-header">
-            <h3 class="card-title" class="list-title" data-list-title>
-              My List
+            <div class="todo-header">
+              <h3 class="card-title" class="list-title" data-list-title>My Lists</h2>
+            </div>
+          </div>
+          <div class="card-body h-100" class="todo-body">
+            <div class="tasks" data-tasks></div>
+
+            <div class="new-task-creator">
+                <form action="" data-new-task-form>
+                    <input 
+                      type="text"
+                      data-new-task-input
+                      class="new task"
+                      placeholder="new task name"
+                      aria-label="new task name"
+                    />
+                    <button class="btn create" aria-label="create new task">+</button>
+                  </form>
+            </div>
+
+            <div class="delete-stuff">
+              <button class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
+              <button class="btn delete" data-delete-list-button>Delete list</button>
+            </div>
+          </div>
+        </div>
+        <div class="card card-row card-primary" class="status">
+          <div class="card-header">
+            <h3 class="card-title">
+              To Do
             </h3>
           </div>
           <div class="card-body">
-            <div class="tasks" data-tasks></div>
-          </div>
-          <div class="card-footer">
-            <span class="task-count" data-list-count>0 pending tasks</span>
-            <div class="new-task-creator">
-              <form action="" data-new-task-form>
-                <div class="input-group">
-                  <input type="text" class="new list" data-new-task-input placeholder="Task Name" aria-label="new task name">
-                  
-                  <div class="input-group-append">
-                    <button class="btn btn-primary" class="btn create" aria-label="create new task">Add</button>
-                  </div>
-                </div>
-                <!-- /btn-group -->
-              </form>
-            </div>
-            <br>
-            <div class="delete-stuff">
-              <button class="btn btn-primary" class="btn delete" data-clear-complete-tasks-button>Clear completed tasks</button>
-              <button class="btn btn-primary" class="btn delete" data-delete-list-button>Delete list</button>
-            </div>
           </div>
         </div>
-
-        <template id="task-template">
-          <div class="task">
-            <input type="checkbox" />
-            <label>
-              <span class="custom-checkbox"></span>
-            </label>
-          </div>
-        </template>
       </div>
     </section>
   </div>
